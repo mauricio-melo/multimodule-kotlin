@@ -7,5 +7,4 @@ CREATE TABLE users(
 );
 
 INSERT INTO users(name, profile)
-VALUES ('Mauricio Melo', 'MASTER'),
-('Alexandre Hideki', 'MASTER');
+VALUES ('Neymar Jr', 'MASTER');

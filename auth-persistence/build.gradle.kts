@@ -13,7 +13,7 @@ flyway {
 	url = "jdbc:mysql://localhost:3306/auth_dev?allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true&useSSL=false&useTimezone=true&serverTimezone=UTC"
 	user = "root"
 	password = "12345678"
-	locations = arrayOf("filesystem:src/main/resources/db/migration")
+	locations = arrayOf("filesystem:src/main/resources/flyway")
 }
 
 tasks.withType<BootJar> {
