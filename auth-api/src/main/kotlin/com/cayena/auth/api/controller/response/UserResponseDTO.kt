@@ -1,7 +1,7 @@
 package com.cayena.auth.api.controller.response
 
 class UserResponseDTO(
-    var id: Long? = null,
+    val username: String = "",
     val name: String = "",
-    val profile: String = ""
+    val phoneNumber: String = ""
 )

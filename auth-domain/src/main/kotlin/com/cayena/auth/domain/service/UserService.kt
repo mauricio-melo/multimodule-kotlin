@@ -13,9 +13,9 @@ class UserService(
         return userPersistence.findAll()
             .map {
                 UserDTO(
-                    id = it.id,
+                    username = it.username,
                     name = it.name,
-                    profile = it.profile.name
+                    phoneNumber = it.phoneNumber
                 )
             }
     }

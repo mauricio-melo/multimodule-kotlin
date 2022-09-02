@@ -1,7 +1,7 @@
 package com.cayena.auth.domain.service.dto
 
 class UserDTO(
-    var id: Long? = null,
+    val username: String = "",
     val name: String = "",
-    val profile: String = ""
+    val phoneNumber: String = ""
 )

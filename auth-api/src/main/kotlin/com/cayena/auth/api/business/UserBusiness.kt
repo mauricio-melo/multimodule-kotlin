@@ -13,9 +13,9 @@ class UserBusiness(
         return userService.findAll()
             .map {
                 UserResponseDTO(
-                    id = it.id,
+                    username = it.username,
                     name = it.name,
-                    profile = it.profile
+                    phoneNumber = it.phoneNumber
                 )
             }
     }
