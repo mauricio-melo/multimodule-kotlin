@@ -1,4 +1,4 @@
-package com.cayena.auth.domain
+package com.cayena.auth.domain.service.dto
 
 class UserDTO(
     var id: Long? = null,

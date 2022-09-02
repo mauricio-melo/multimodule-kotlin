@@ -9,7 +9,7 @@ class User(
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idt_match_today")
+    @Column(name = "idt_user")
     var id: Long? = null,
 
     @Column(name = "name", nullable = false)

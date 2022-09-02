@@ -1,7 +1,7 @@
 package com.cayena.auth.api.business
 
 import com.cayena.auth.api.controller.response.UserResponseDTO
-import com.cayena.auth.domain.UserService
+import com.cayena.auth.domain.service.UserService
 import org.springframework.stereotype.Service
 
 @Service

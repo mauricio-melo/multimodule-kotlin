@@ -1,5 +1,6 @@
-package com.cayena.auth.domain
+package com.cayena.auth.domain.service
 
+import com.cayena.auth.domain.service.dto.UserDTO
 import com.cayena.auth.persistence.service.UserPersistence
 import org.springframework.stereotype.Service
 
