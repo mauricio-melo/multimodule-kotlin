@@ -11,16 +11,24 @@ dependencies {
     runtimeOnly("mysql:mysql-connector-java")
 }
 
-tasks.register("database_flyway", FlywayMigrateTask::class) {
-    if (!project.hasProperty("url")) throw StopExecutionException("Args url is mandatory")
-    if (!project.hasProperty("user")) throw StopExecutionException("Args user is mandatory")
-    if (!project.hasProperty("password")) throw StopExecutionException("Args password is mandatory")
-    if (!project.hasProperty("locations")) throw StopExecutionException("Args locations is mandatory")
-    url = project.property("url").toString()
-    user = project.property("user").toString()
-    password = project.property("password").toString()
-    locations = arrayOf("filesystem:" + project.property("locations").toString())
+//tasks.register("database_flyway", FlywayMigrateTask::class) {
+//    if (!project.hasProperty("url")) throw StopExecutionException("Args url is mandatory")
+//    if (!project.hasProperty("user")) throw StopExecutionException("Args user is mandatory")
+//    if (!project.hasProperty("password")) throw StopExecutionException("Args password is mandatory")
+//    if (!project.hasProperty("locations")) throw StopExecutionException("Args locations is mandatory")
+//    url = project.property("url").toString()
+//    user = project.property("user").toString()
+//    password = project.property("password").toString()
+//    locations = arrayOf("filesystem:" + project.property("locations").toString())
+//}
+
+tasks.register("database_dev", FlywayMigrateTask::class) {
+    url = "jdbc:mysql://localhost:3306/auth_dev?allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true&useSSL=false&useTimezone=true&serverTimezone=UTC"
+    user = "root"
+    password = "12345678"
+    locations = arrayOf("filesystem:src/main/resources/flyway")
 }
+
 
 tasks.withType<BootJar> {
     enabled = false

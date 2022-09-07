@@ -3,14 +3,18 @@ package com.cayena.auth.persistence.entity
 import org.hibernate.annotations.CreationTimestamp
 import org.hibernate.annotations.UpdateTimestamp
 import java.time.LocalDateTime
-import java.util.*
-import javax.persistence.*
+import java.util.UUID
+import javax.persistence.Column
+import javax.persistence.Entity
+import javax.persistence.Id
+import javax.persistence.PrePersist
+import javax.persistence.Table
 import javax.validation.constraints.Email
 import javax.validation.constraints.Size
 
 @Entity
 @Table(name = "users")
-class User(
+class UserEntity(
 
     @Id
     @Email
@@ -36,14 +40,12 @@ class User(
     val passwordChangeRequired: Boolean = true,
 
     @CreationTimestamp
-    @Column(name = "created_at", columnDefinition = "DATETIME", nullable = false, updatable = false)
+    @Column(name = "created_at", nullable = false, updatable = false)
     val createdAt: LocalDateTime = LocalDateTime.now(),
 
     @UpdateTimestamp
-    @Column(name = "updated_at", columnDefinition = "DATETIME", nullable = false)
+    @Column(name = "updated_at", nullable = false)
     val updatedAt: LocalDateTime = LocalDateTime.now(),
-
-
     ) {
     @PrePersist
     fun onCreateEntity() {
